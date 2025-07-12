@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useDashboardActions } from "@/contexts/DashboardContext";
+import { useDashboard, useDashboardActions } from "@/contexts/DashboardContext";
 
 interface DashboardHeaderProps {
   className?: string;
@@ -23,7 +23,8 @@ const timeframeOptions = [
 
 export function DashboardHeader({ className }: DashboardHeaderProps) {
   const [selectedTimeframe, setSelectedTimeframe] = useState("2d");
-  const { openAddWidgetModal } = useDashboardActions();
+  const { state } = useDashboard();
+  const { openAddWidgetModal, setSearchQuery } = useDashboardActions();
 
   const currentTimeframe = timeframeOptions.find(
     (option) => option.value === selectedTimeframe,
@@ -43,7 +44,12 @@ export function DashboardHeader({ className }: DashboardHeaderProps) {
         <div className="flex items-center space-x-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-            <Input placeholder="Search anything..." className="pl-10 w-80" />
+            <Input
+              placeholder="Search anything..."
+              className="pl-10 w-80"
+              value={state.searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
 
           <Button
