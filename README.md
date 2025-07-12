@@ -196,12 +196,4 @@ The application will be optimized and ready for deployment.
 - Safari
 - Edge
 
-## 🤝 Support
 
-For any issues or questions regarding the setup or functionality, please refer to the code comments or contact the development team.
-
----
-
-**Assignment Completed By**: Frontend Development Team  
-**Technology**: React + TypeScript + TailwindCSS  
-**Date**: 2024
