@@ -79,9 +79,6 @@ client/
 
 2. **Navigate to project directory**
 
-   ```bash
-   cd dynamic-dashboard-assignment
-   ```
 
 3. **Install dependencies**
 
